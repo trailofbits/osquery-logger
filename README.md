@@ -1,6 +1,9 @@
-# Simple osquery Logger
+# osquery-logger
+osquery logger for debugging [osqueryd](https://github.com/facebook/osquery)
 
-`logger.py` is a simple osquery logger that is useful for debugging osqueryd. It listens for messages from osquery nodes, logs received data to the console, and replies with `{"node_invalid": false}`.
+`logger.py` is a simple osquery logger that is useful for debugging osqueryd.
+It listens for messages from osquery nodes, logs received data to the console,
+and replies with `{"node_invalid": false}`.
 
 ## Usage
 
