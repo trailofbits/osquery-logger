@@ -1,9 +1,7 @@
 # osquery-logger
-osquery logger for debugging [osqueryd](https://github.com/facebook/osquery)
+osquery listener/server for debugging [osqueryd](https://github.com/facebook/osquery)
 
-`logger.py` is a simple osquery logger that is useful for debugging osqueryd.
-It listens for messages from osquery nodes, logs received data to the console,
-and replies with `{"node_invalid": false}`.
+`logger.py` is a simple osquery listener/server that is useful for debugging osqueryd. It listens for messages from osquery nodes, logs received data to the console, and replies with `{"node_invalid": false}`.
 
 ## Usage
 
@@ -16,7 +14,7 @@ and replies with `{"node_invalid": false}`.
 3. Create a file named `config.yml` with data for `/config` endpoint.
    Example file format (all keys are optional):
 
-   ```yaml
+```yaml
 file_paths:
   category1:  # list of paths
   - path1
@@ -51,13 +49,13 @@ packs:
         value: some value
         removed: false
 ```
-5. Create a file named `tasks.yml` with data for the `/distributed/read` endpoint.
+
+5. Create a file named `tasks.yml` with data for the `/distributed/read` endpoint. Results of executed tasks should be returned to the `/distributed/write` endpoint.
    Example file format:
 
-   ```yaml
+```yaml
 guid1: SELECT * FROM table1
 guid2: SELECT * FROM table2
 ```
-   Results of executed tasks should be returned to the `/distributed/write` endpoint.
 
 Data files can contain plain JSON or equivalent YAML data which makes it easier to edit them.
